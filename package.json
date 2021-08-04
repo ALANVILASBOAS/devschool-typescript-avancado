@@ -1,0 +1,14 @@
+{
+  "name": "4-typescript-avancado",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc --watch"
+  },
+  "author": "Alan Jhonnes <alanjhonnes@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ts-toolbelt": "^9.6.0"
+  }
+}
