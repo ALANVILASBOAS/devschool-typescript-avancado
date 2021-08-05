@@ -4,7 +4,7 @@ export type HelloWorld = `${Hello} ${World}`;
 
 
 export type Size = 'small' | 'medium' | 'large';
-export type Icon = 'user' | 'www' | 'checkmark'
+export type Icon = 'user' | 'www' | 'checkmark';
 
 export type IconSize = `${Icon}-${Size}`;
 

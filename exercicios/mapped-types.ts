@@ -11,6 +11,8 @@ export type HandlerTypes = keyof Handlers;
 // somente para os tipos de handlers disponíveis e que o retorno do handler 
 // corresponda ao tipo que foi passado
 // Remove também o cast forçado que atualmente está evitando o erro de compilação
-function getHandler(handlerType: string): Function {
-    return handlers[handlerType as keyof Handlers];
+function getHandler<H extends HandlerTypes>(handlerType: H): Handlers[H] {
+    return handlers[handlerType];
 }
+
+const handler = getHandler('scroll');

@@ -12,5 +12,3 @@ const bigConfigObject = {
         START: 2
     }
 } as const;
-
-

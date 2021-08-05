@@ -9,7 +9,7 @@ export function isUser(value: any): value is User {
 
 export const user: any = {};
 if (isUser(user)) {
-    user
+    
 };
 
 export function isDefined<T>(value: T | null | undefined): value is T {
@@ -19,7 +19,9 @@ export function isDefined<T>(value: T | null | undefined): value is T {
 let someVar: string | null | undefined = 'x' as any;
 
 if (isDefined(someVar)) {
-    someVar.big
+    someVar
+} else {
+    someVar
 }
 
 

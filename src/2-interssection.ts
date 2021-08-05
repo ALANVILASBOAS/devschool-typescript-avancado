@@ -8,3 +8,4 @@ type Named = {
 }
 
 type NamedPoint = Point & Named;
+

@@ -4,12 +4,16 @@ export interface SomeObject {
     c: boolean;
 }
 
+type a = SomeObject["a"]
+type b = SomeObject["b"]
+type c = SomeObject["c"]
+
 export type keysOfObject = keyof SomeObject;
 
 
 export type NullEverything<T> = {
-    // [K in keyof T]: T[K];
-    [K in keyof T]: null;
+    readonly [K in keyof T]+?: T[K];
+    // [K in keyof T]: null;
     // [P in "a" | "b"]: null;
 }
 
@@ -19,7 +23,7 @@ export type NullAllProps = NullEverything<SomeObject>
 type BoolOptions = 'debug' | 'trace' | 'performance';
 type StrOptions = 'application-name' | 'api-url';
 
-type BoolConfig = { [K in BoolOptions]: boolean };
+type BoolConfig = { readonly [K in BoolOptions]: boolean };
 type StrConfig = { [K in StrOptions]: string };
 
 type Config = BoolConfig & StrConfig;

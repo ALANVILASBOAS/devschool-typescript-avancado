@@ -4,7 +4,7 @@ export type User = {
 }
 
 export type UserByIds = {
-    [id: string]: User;
+    [prop: string]: User | undefined;
 }
 
 const usersByIds: UserByIds = {
@@ -14,4 +14,21 @@ const usersByIds: UserByIds = {
     }
 };
 
+usersByIds['abc'] = {
+    id: '1234',
+    name: 'Alan',
+};
 
+const usersCache: UserByIds = {};
+
+function addToCache(user: User): void {
+    usersCache[user.id] = user;
+}
+
+function getFromCache(id: string): User | undefined {
+    return usersCache[id];
+}
+
+function removeFromCache(id: string): void {
+    delete usersCache[id];
+}
