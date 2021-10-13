@@ -1,23 +1,9 @@
 // Melhore esse tipo utilizando uma união discriminada de tipos mais específicos
-export type User = Guest | AuthenticatedUser;
-
-export type Guest = {
-    type: 'guest';
+export type User = {
+    type: 'authenticated-user' | 'guest';
     name: string;
-    registered: false;
+    email?: string;
+    registered: boolean;
 }
 
-export type AuthenticatedUser = {
-    type: 'authenticated-user';
-    name: string;
-    email: string;
-    registered: true;
-}
 
-function user(user: User) {
-    if(user.registered) {
-        user
-    } else {
-        user
-    }
-}

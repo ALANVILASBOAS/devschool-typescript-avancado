@@ -1,18 +1,18 @@
-export type Wrapper<Type> = {
-    data: Type;
+export type Wrapper<T> = {
+    data: T;
 }
 
 export type StringWrapper<T extends string = string> = {
     data: T;
 }
 
-export function wrap<T extends string>(object: T): StringWrapper<T> {
+export function wrap<T>(object: T): Wrapper<T> {
     return {
         data: object,
     }
 } 
 
-const stringObj = "b";
+const stringObj = "alan";
 
 export const wrapperString = wrap(stringObj);
 
@@ -23,11 +23,7 @@ export class GenericClass<T> {
     constructor(property: T) {
         this.prop = property;
     }
-
-    setProp(value: T) {
-        this.prop = value;
-    }
 }
 
 const genericInstance = new GenericClass<number>(123);
-genericInstance.setProp(43534);
+genericInstance.prop;

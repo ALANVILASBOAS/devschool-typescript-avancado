@@ -20,7 +20,7 @@ export function changeableType<TBase extends Constructor<NodeTyped>>(base: TBase
     }
 }
 
-export class Node<T extends string> implements NodeTyped {
+export class Node<T extends string> {
     constructor(public readonly type: T) {
 
     }
@@ -32,7 +32,7 @@ const idNode = new IdentifiableNode("square");
 
 export function timestampable<TBase extends Constructor>(base: TBase) {
     return class extends base {
-        readonly createdAt = new Date();
+        createdAt = new Date();
         updatedAt = new Date();
 
         setModified() {
@@ -45,10 +45,5 @@ export const TimedAndIdentifiedNode = timestampable(IdentifiableNode);
 
 const timedAndIdentifiedNode = new TimedAndIdentifiedNode("square");
 
-export const ChangeableTimedIdentifiedNode = changeableType(TimedAndIdentifiedNode);
-
-const changeableTimedAndIdentifiedNode = new ChangeableTimedIdentifiedNode("square");
-
-changeableTimedAndIdentifiedNode
-
+timedAndIdentifiedNode.setModified();
 
