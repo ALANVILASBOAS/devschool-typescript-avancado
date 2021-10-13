@@ -7,4 +7,5 @@ type Named = {
     name: string;
 }
 
+// Interssection de Point com Named
 type NamedPoint = Point & Named;

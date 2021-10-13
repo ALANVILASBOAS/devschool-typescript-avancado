@@ -11,6 +11,6 @@ const bigConfigObject = {
         NEXT: 1,
         START: 2
     }
-} as const;
+} as const; // "as const" é um cast especial do typescript para trabalhar com objetos que devem ser readonly
 
 

@@ -3,6 +3,7 @@ export type User = {
     name: string;
 }
 
+// tipos indexados são tipos em que as propriedades são definidas por um índice que faz parte de um conjunto (ex string, number, symbol)
 export type UserByIds = {
     [prop: string]: User | undefined;
 }

@@ -3,7 +3,7 @@ export interface User {
     name: string;
     email: string | null;
 }
-
+// O typescript possui vários tipos utilitários, como os listados abaixo:
 export type ConstantUser = Readonly<User>;
 
 export type PartialUser = Partial<User>;

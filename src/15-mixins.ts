@@ -1,6 +1,7 @@
 
 export type Constructor<T = {}> = new (...args: any[]) => T;
 
+// Mixin é um pattern que possibilita utilizarmos composição ao invés de extender um tipo base
 
 export function identifiable<TBase extends Constructor>(base: TBase) {
     return class extends base {

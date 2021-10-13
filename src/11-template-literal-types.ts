@@ -6,10 +6,11 @@ export type HelloWorld = `${Hello} ${World}`;
 export type Size = 'small' | 'medium' | 'large';
 export type Icon = 'user' | 'www' | 'checkmark'
 
+// template literal tipes utilizando a mesma sintaxe de template strings no javascript mas para definição de tipos
 export type IconSize = `${Icon}-${Size}`;
 
 
-// types auxiliáres
+// types auxiliáres nativos do typescript
 export type IconUppercase = Uppercase<Icon>;
 export type IconLowercase = Lowercase<IconUppercase>;
 export type IconCapitalized = Capitalize<Icon>;

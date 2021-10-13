@@ -10,7 +10,7 @@ type c = SomeObject["c"]
 
 export type keysOfObject = keyof SomeObject;
 
-
+// Um tipo mapeado itera em outras chaves e modifica os tipos da propriedade dinâmicamente
 export type NullEverything<T> = {
     // readonly [K in keyof T]+?: T[K];
     [K in keyof T]: null;
