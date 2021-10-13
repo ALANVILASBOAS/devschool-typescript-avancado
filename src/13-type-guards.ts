@@ -1,3 +1,7 @@
+// type-guards são funções que servem para afunilar o tipo de uma variável
+// são funções que retornam um valor truthy/falsy mas que o tipo de retorno possui a sintaxe especial
+// argumento is TipoAfunilado
+
 export interface User {
     id: string;
     name: string;
