@@ -17,6 +17,6 @@ export function getAuthenticatedUsers(users: User[]): AuthenticatedUser[] {
 }
 
 // Altere o retorno da função abaixo para virar um type-guard que valide que se o retorno da função for "true", o user é um LoggedInUser
-export function isAuthenticatedUser(user: User): boolean {
+export function isAuthenticatedUser(user: User): user is AuthenticatedUser {
     return user.type === 'user';
 }
